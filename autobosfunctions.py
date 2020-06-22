@@ -100,8 +100,8 @@ class UserCommands:
         print("------------------------------------------------------------\n")
 
     def open_command(self, usercommand):
-        for x in glob.glob(str(os.getcwd()) + "\commandspath\\*.txt"):
-            if str(os.getcwd() + "\commandspath\\" + usercommand + ".txt") == x:
+        for x in glob.glob(str(os.getcwd()) + "\\commandspath\\*.txt"):
+            if str(os.getcwd() + "\\commandspath\\" + usercommand + ".txt") == x:
                 command_name = open(str(x), 'r')
                 subprocess.Popen(command_name.read())
                 self.a = 1
@@ -116,8 +116,8 @@ class UserCommands:
 
     def open_command_folder(self, usercommand):
         new = usercommand.strip('folder ')
-        for x in glob.glob(str(os.getcwd()) + "\commandsfolderpath\\*.txt"):
-            if str(os.getcwd() + "\commandsfolderpath\\" + new + ".txt") == x:
+        for x in glob.glob(str(os.getcwd()) + "\\commandsfolderpath\\*.txt"):
+            if str(os.getcwd() + "\\commandsfolderpath\\" + new + ".txt") == x:
                 command_name = open(str(x), 'r')
                 subprocess.Popen(['start', command_name.read()], shell=True)
                 self.b = 1
@@ -137,98 +137,98 @@ commands = UserCommands()
 class DefaultPrograms:
     def open_chrome(self):
         try:
-            subprocess.Popen("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+            subprocess.Popen("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")
             print("Chrome opened successfully")
         except FileNotFoundError:
             print("Chrome is not installed in your machine")
 
     def open_notepad(self):
         try:
-            subprocess.Popen("C:\Windows\system32\\notepad.exe")
+            subprocess.Popen("C:\\Windows\\system32\\notepad.exe")
             print("Notepad opened successfully")
         except FileNotFoundError:
             print("Notepad is not installed in your machine")
 
     def open_this_pc(self):
         try:
-            subprocess.Popen("C:\Windows\explorer.exe")
+            subprocess.Popen("C:\\Windows\\explorer.exe")
             print("This PC opened successfully")
         except FileNotFoundError:
             print("Windows explorer is not installed in your machine")
 
     def open_calc(self):
         try:
-            subprocess.Popen("C:\Windows\System32\calc.exe")
+            subprocess.Popen("C:\\Windows\\System32\\calc.exe")
             print("Calculator opened successfully")
         except FileNotFoundError:
             print("Calculator is not installed in your machine")
 
     def open_controlpanel(self):
         try:
-            subprocess.Popen("C:\Windows\System32\control.exe")
+            subprocess.Popen("C:\\Windows\\System32\\control.exe")
             print("Control Panel Opened successfully")
         except FileNotFoundError:
             print("Control panel is not installed in your machine")
 
     def open_dxdiag(self):
         try:
-            subprocess.Popen("C:\Windows\System32\dxdiag.exe")
+            subprocess.Popen("C:\\Windows\\System32\\dxdiag.exe")
             print("Dxdiag opened successfully")
         except FileNotFoundError:
             print("dxdiag.exe is not installed in your machine")
 
     def open_soundrecorder(self):
         try:
-            subprocess.Popen("C:\Windows\System32\SoundRecorder.exe")
+            subprocess.Popen("C:\\Windows\\System32\\SoundRecorder.exe")
             print("SoundRecorder opened successfully")
         except FileNotFoundError:
             print("SoundRecorder is not installed in your machine")
 
     def open_sticky_notes(self):
         try:
-            subprocess.Popen("C:\Windows\System32\StikyNot.exe")
+            subprocess.Popen("C:\\Windows\\System32\\StikyNot.exe")
             print("Sticky Notes opened successfully")
         except FileNotFoundError:
             print("Sticky notes is not installed in your machine")
 
     def open_command_prompt(self):
         try:
-            subprocess.Popen("C:\Windows\System32\cmd.exe")
+            subprocess.Popen("C:\\Windows\\System32\\cmd.exe")
             print("Command prompt opened successfully")
         except FileNotFoundError:
             print("Command prompt is not installed in your machine")
 
     def open_ms_word(self):
         try:
-            subprocess.Popen("C:\Program Files\Microsoft Office\Office15\WINWORD.EXE")
+            subprocess.Popen("C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE")
             print("Microsoft word opened successfully")
         except FileNotFoundError:
             print("Microsoft Word is not installed in your machine")
 
     def open_ms_powerpoint(self):
         try:
-            subprocess.Popen("C:\Program Files\Microsoft Office\Office15\POWERPNT.EXE")
+            subprocess.Popen("C:\\Program Files\\Microsoft Office\\Office15\\POWERPNT.EXE")
             print("Microsoft PowerPoint opened successfully")
         except FileNotFoundError:
             print("Microsoft Powerpoint is not installed in your machine")
 
     def open_ms_publisher(self):
         try:
-            subprocess.Popen("C:\Program Files\Microsoft Office\Office15\MSPUB.EXE")
+            subprocess.Popen("C:\\Program Files\\Microsoft Office\\Office15\\MSPUB.EXE")
             print("Microsoft Publisher opened successfully")
         except FileNotFoundError:
             print("Microsoft Publisher is not installed in your machine")
 
     def open_ms_access(self):
         try:
-            subprocess.Popen("C:\Program Files\Microsoft Office\Office15\MSACCESS.EXE")
+            subprocess.Popen("C:\\Program Files\\Microsoft Office\\Office15\\MSACCESS.EXE")
             print("Microsoft Access opened successfully")
         except FileNotFoundError:
             print("Microsoft Access is not installed in your machine")
 
     def open_ms_excel(self):
         try:
-            subprocess.Popen("C:\Program Files\Microsoft Office\Office15\EXCEL.EXE")
+            subprocess.Popen("C:\\Program Files\\Microsoft Office\\Office15\\EXCEL.EXE")
             print("Microsoft Excel opened successfully")
         except FileNotFoundError:
             print("Microsoft Excel is not installed in your machine")
@@ -268,28 +268,28 @@ my_internet = TheInternet()
 
 class UserComp:
     def default_my_desktop(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Desktop"], shell=True)
-        print("Folder Documents opened successfully")
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Desktop"], shell=True)
+        print("Folder Desktop opened successfully")
 
     def default_my_documents(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Documents"], shell=True)
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Documents"], shell=True)
         print("Folder Documents opened successfully")
 
     def default_my_downloads(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Downloads"], shell=True)
-        print("Folder Documents opened successfully")
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Downloads"], shell=True)
+        print("Folder Downloads opened successfully")
 
     def default_my_music(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Music"], shell=True)
-        print("Folder Documents opened successfully")
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Music"], shell=True)
+        print("Folder Music opened successfully")
 
     def default_my_pictures(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Pictures"], shell=True)
-        print("Folder Documents opened successfully")
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Pictures"], shell=True)
+        print("Folder Pictures opened successfully")
 
     def default_my_videos(self):
-        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\Videos"], shell=True)
-        print("Folder Documents opened successfully")
+        subprocess.Popen(['start', 'C:\\Users\\' + str(os.getlogin()) + "\\Videos"], shell=True)
+        print("Folder Videos opened successfully")
 
     def new_folder(self):
         folname = input(str("Type the path including the folder name you want to create:\n"))
